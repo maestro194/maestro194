@@ -4,7 +4,7 @@
 
 <p align="center"><a><img src="https://lanyard.cnrad.dev/api/598868698157285376" /></a></p>
 
-<p align="center"><a href="https://osu.ppy.sh/users/13386011"><img src="https://osu-sig.vercel.app/card?user=AutumnVN&mode=std&lang=en&mini=true" width="410" /></a></p>
+<p align="center"><a href="https://osu.ppy.sh/users/13386011"><img src="https://osu-sig.vercel.app/card?user=-%20Maestro%20-&mode=std&lang=en&mini=true" width="410" /></a></p>
 
 <!--
 **maestro194/maestro194** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
