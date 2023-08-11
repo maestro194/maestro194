@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --background-image: url('maestro194.is-a.dev/public/bg.jpg');
+  --opacity: 0.7;
+
+  --clock: #7df
+  font-family: Sofia Sans, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+html,
+span:not([class*='spinner-']):not([class*='spinnerItem']) {
+  backface-visibility: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 300px;
+  min-height: 100vh;
+}
+
+#root {
+  margin: 0 auto;
+  max-width: min(100% - 50px, 1280px);
+}
+
+background-filter {
+  filter: blur(clamp(0px, calc(50px * var(--scroll, 0) + -5px), 10px)) brightness(.7);
+  position: fixed;
+  z-index: -1;
+  background-color: var(--clock);
+}
+
+background-image {
+  position: absolute;
+  background: var(--background-image) center/cover no-repeat;
+}
+
+#root header {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: center;
+  margin-top: 30vh;
+}
+
+#root header span {
+  -webkit-mask: linear-gradient(to right, #fff 45%, transparent 55%) 0 0 / 220% 100% no-repeat;
+  opacity: clamp(.7, .75 * var(--scroll, 0) + .7, .85);
+  animation: bio-fade 2s ease-in-out 1.9s both;
+  color: #ddd;
+  font-size: clamp(18px, 3vmin, 25px);
+  font-weight: 400;
+}
