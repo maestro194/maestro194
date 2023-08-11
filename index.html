@@ -4,28 +4,75 @@
 <head>
     <title>Maestro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="average chino enjoyer">
     <link rel="canonical" href="https://maestro194.is-a.dev/">
     <link rel="stylesheet" href="public/style.css">
+    <style></style>
     
 </head>
 
-<body>
+<body style="--scroll: 0;">
   <div id="root">  
     <background-filter>
       <background-image>
     </background-filter>
 
+    <!--
+      building header later
+    -->
     <header>
-      <span>
-        Hi, I'm Maestro, a developer from Vietnam.
-      </span>
+      <section>
+        <span>Maestro</span>
+        <span>Hi, I'm Maestro, a developer from Vietnam. Welcome to my page :D.</span>
+      </section>
     </header>
 
-    <main>
-      <bento-grid>
-  
-      </bento-grid>
+    <down-arrow>
+      <svg stroke="currentColor" viewBox="0 0 512 512" onclick="scrollDown()">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 184l144 144 144-144">
+      </svg>
+    </down-arrow>
+
+    <main class="grid grid-cols-12 grid-rows-8 gap-1">
+      <div class="col-span-8 row-span-8 gap-1">
+        <div class="col-span-2 row-span-2">box1</div>
+        <div class="col-span-2 row-span-2">box2</div>
+        <div class="col-span-2 row-span-2">box3</div>
+        <div class="col-span-2 row-span-2">box4</div>
+
+        <div class="col-span-4 row-span-2">box5</div>
+        <div class="col-span-4 row-span-2">box6</div>
+      </div>
+
+      <div class="grid grid-cols-2 start-column-5 gap-14">
+        <div class="col-span-4 row-span-1">box7</div>
+        <div class="col-span-4 row-span-1">box8</div>
+        <div class="col-span-4 row-span-1">box9</div>
+        <div class="col-span-4 row-span-1">box0</div>
+      </div>
     </main>
+
+<!--
+  testing main
+
+<main class="grid-rows-8 grid grid-cols-12 items-center gap-4 [&>*]:bg-yellow-300">
+  <div class="grid-rows-8 row-span-8 col-span-8 grid grid-cols-8">
+    <div class="col-span-2 row-span-2 p-2">box1</div>
+    <div class="col-span-2 row-span-2 p-2">box2</div>
+    <div class="col-span-2 row-span-2 p-2">box3</div>
+    <div class="col-span-2 row-span-2 p-2">box4</div>
+
+    <div class="col-span-4 row-span-6 p-2">box5</div>
+    <div class="col-span-4 row-span-6 p-2">box6</div>
+  </div>
+
+  <div class="row-span-8 col-span-4">
+    <div class="col-span-4 row-span-2 p-2">box7</div>
+    <div class="col-span-4 row-span-2 p-2">box8</div>
+    <div class="col-span-4 row-span-2 p-2">box9</div>
+    <div class="col-span-4 row-span-2 p-2">box0</div>
+  </div>
+</main>
+-->
+
   </div>
 </body>
