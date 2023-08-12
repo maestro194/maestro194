@@ -536,6 +536,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
 .visible{
   visibility: visible;
 }
@@ -556,6 +590,26 @@ video {
   position: relative;
 }
 
+.col-span-2{
+  grid-column: span 2 / span 2;
+}
+
+.col-span-4{
+  grid-column: span 4 / span 4;
+}
+
+.col-start-9{
+  grid-column-start: 9;
+}
+
+.row-span-2{
+  grid-row: span 2 / span 2;
+}
+
+.row-start-3{
+  grid-row-start: 3;
+}
+
 .block{
   display: block;
 }
@@ -566,6 +620,10 @@ video {
 
 .table{
   display: table;
+}
+
+.grid{
+  display: grid;
 }
 
 .contents{
@@ -588,8 +646,29 @@ video {
   resize: both;
 }
 
+.grid-cols-12{
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.items-center{
+  align-items: center;
+}
+
+.gap-4{
+  gap: 1rem;
+}
+
 .border{
   border-width: 1px;
+}
+
+.bg-yellow-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
+}
+
+.p-2{
+  padding: 0.5rem;
 }
 
 .underline{
@@ -717,4 +796,12 @@ down-arrow svg {
 [style*='.'] down-arrow {
   opacity: 0;
   pointer-events: none;
+}
+
+bento-grid div {
+}
+
+.\[\&\>\*\]\:bg-yellow-300>*{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
 }

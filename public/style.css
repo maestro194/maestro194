@@ -101,3 +101,13 @@ down-arrow svg {
   opacity: 0;
   pointer-events: none;
 }
+
+bento-grid div {
+  width: 15vh;
+  height: 10vh;
+}
+
+bento-grid div a {
+  width: 100%;
+  height: 100%;
+}
