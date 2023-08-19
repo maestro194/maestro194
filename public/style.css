@@ -75,34 +75,7 @@ background-image {
   font-weight: 600;
 }
 
-down-arrow {
-  -webkit-tap-highlight-color: transparent;
-  display: flex;
-  position: fixed;
-  right: 0;
-  left: 0;
-  justify-content: center;
-  transition: opacity .2s ease;
-}
-
-down-arrow svg {
-  transition: opacity .25s ease;
-  opacity: .5;
-  cursor: pointer;
-  padding-right: .25em;
-  padding-left: .25em;
-  width: 1em;
-  height: 1.5em;
-  color: yellow;
-  font-size: min(60px, 12vw);
-}
-
-[style*='.'] down-arrow {
-  opacity: 0;
-  pointer-events: none;
-}
-
-bento-grid div {
+bento-grid widget-card {
   width: 15vh;
   height: 10vh;
 }
