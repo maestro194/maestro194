@@ -4,6 +4,8 @@
 <head>
     <title>Maestro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="maestro194">
+    <meta name="description" content="Glasses girls are the best">
     <link rel="canonical" href="https://maestro194.is-a.dev/">
     <link rel="stylesheet" href="public/style.css">
     <link rel="stylesheet" href="public/tailwind.css">
@@ -27,31 +29,66 @@
       </section>
     </header>
 
-    <bento-grid class="grid grid-cols-12 items-center gap-4 [&>*]:bg-blue-100">
-      <widget-card class="col-span-2 row-span-2 p-2">
-        <a href="https://www.facebook.com/profile.php?id=100014348434806">Facebook</a>
+    <bento-grid class="grid grid-cols-8 gap-10 overflow-hidden mb-10">
+      <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
+        <a class="flex-row box-border p-6 w-full h-full text-inherit" href="https://www.facebook.com/profile.php?id=100014348434806">
+          <widget-content class="flex flex-col">
+            <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+            <widget-meta>
+              <div class="font-bold">Facebook</div>
+              <div class="opacity-70 text-sm">Đông Lê</div>
+            </widget-meta>
+          </widget-content>
+        </a>
       </widget-card>
 
-      <widget-card class="col-span-2 row-span-2 p-2">
-        <a href="https://www.youtube.com/@maestro_4194">Youtube</a>
+      <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
+        <a class="flex-row box-border p-6 w-full h-full text-inherit" href="https://youtube.com/@Maestro_4194">
+          <widget-content class="flex flex-col">
+            <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+            <widget-meta>
+              <div class="font-bold">Youtube</div>
+              <div class="opacity-70 text-sm">Maestro_419</div>
+            </widget-meta>
+          </widget-content>
+        </a>
       </widget-card>
 
-      <widget-card class="col-span-2 row-span-2 p-2">
-        <a href="https://github.com/maestro194">Github</a>
-      </widget-card>
-      
-      <widget-card class="col-span-2 row-span-2 p-2">
-        <a href="#">LinkedIn</a>
+      <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
+        <a class="flex-row box-border p-6 w-full h-full text-inherit" href="https://github.com/maestro194">
+          <widget-content class="flex flex-col">
+            <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+            <widget-meta>
+              <div class="font-bold">Github</div>
+              <div class="opacity-70 text-sm">maestro194</div>
+            </widget-meta>
+          </widget-content>
+        </a>
       </widget-card>
 
-      <div class="col-span-4 row-span-2 p-2">box5</div>
-      <div class="col-span-4 col-start-9 row-span-2 p-2">box6</div>
+      <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
+        <a class="flex-row box-border p-6 w-full h-full text-inherit" href="#">
+          <widget-content class="flex flex-col">
+            <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+            <widget-meta>
+              <div class="font-bold">LinkedIn</div>
+            </widget-meta>
+          </widget-content>
+        </a>
+      </widget-card>
 
-      <div class="col-span-4 row-span-2 row-start-3 p-2">box7</div>
-      <div class="col-span-4 row-span-2 row-start-3 p-2">box8</div>
-      <div class="col-span-4 col-start-9 row-span-2 p-2">box9</div>
-      <div class="col-span-4 col-start-9 row-span-2 p-2">box0</div>
+      <div class="col-span-4 row-span-2 row-start-3 p-2 bg-blue-50">box9</div>
+      <div class="col-span-4 row-span-2 row-start-3 p-2 bg-blue-50">box0</div>
     </bento-grid>
 
+    <repo-grid class="grid-cols-4 gap-5 flex flex-col">
+      <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box5</repo-card>
+      <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box6</repo-card>
+      <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box7</repo-card>
+      <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box8</repo-card>
+    </repo-grid>
+
   </div>
+
+  <script defer src="public/script.js"></script>
 </body>

@@ -16,3 +16,14 @@ function scrollDown() {
 (window.setScrollValue = () => document.body.style.setProperty('--scroll', window.scrollY / window.innerHeight))();
 document.addEventListener('scroll', setScrollValue);
 window.addEventListener('resize', setScrollValue);
+
+(window.setSquareSizeAndGap = () => {
+  const bento = document.querySelector('bento-grid');
+  const numColumns = getComputedStyle(bento).gridTemplateColumns.split(' ').length;
+  const columnGap = parseInt(getComputedStyle(bento).columnGap);
+  const squareSize = (bento.offsetWidth - columnGap * (numColumns - 1)) / numColumns;
+
+  bento.style.setProperty('--square-size', `${squareSize}px`);
+  bento.style.setProperty('--gap', `${columnGap}px`);
+})();
+window.addEventListener('resize', setSquareSizeAndGap);
