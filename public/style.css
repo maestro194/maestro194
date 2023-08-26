@@ -77,6 +77,12 @@ background-image {
   font-weight: 600;
 }
 
+name-image {
+  width: auto;
+  position: absolute;
+  background: url(../public/maestro.png) center/cover no-repeat;
+}
+
 widget-card {
   --c: min(var(--cols, 2), var(--grid-cols));
   --r: var(--rows, 2);
