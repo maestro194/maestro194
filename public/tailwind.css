@@ -618,8 +618,16 @@ video {
   grid-row-start: 3;
 }
 
+.m-5{
+  margin: 1.25rem;
+}
+
 .mb-10{
   margin-bottom: 2.5rem;
+}
+
+.mb-5{
+  margin-bottom: 1.25rem;
 }
 
 .box-border{
@@ -650,8 +658,16 @@ video {
   display: none;
 }
 
+.aspect-auto{
+  aspect-ratio: auto;
+}
+
 .aspect-square{
   aspect-ratio: 1 / 1;
+}
+
+.h-6{
+  height: 1.5rem;
 }
 
 .h-8{
@@ -666,12 +682,24 @@ video {
   width: 0.25rem;
 }
 
+.w-6{
+  width: 1.5rem;
+}
+
 .w-8{
   width: 2rem;
 }
 
+.w-auto{
+  width: auto;
+}
+
 .w-full{
   width: 100%;
+}
+
+.flex-auto{
+  flex: 1 1 auto;
 }
 
 .border-collapse{
@@ -722,6 +750,10 @@ video {
   gap: 2.5rem;
 }
 
+.gap-12{
+  gap: 3rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
@@ -732,10 +764,6 @@ video {
 
 .gap-6{
   gap: 1.5rem;
-}
-
-.gap-12{
-  gap: 3rem;
 }
 
 .overflow-hidden{
@@ -816,6 +844,11 @@ video {
   color: inherit;
 }
 
+.text-red-300{
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
+}
+
 .underline{
   text-decoration-line: underline;
 }
@@ -852,7 +885,7 @@ video {
 :root {
   --background-image: url('https://maestro194.is-a.dev/public/bg.jpg');
   --opacity: 0.7;
-  --gril-cols: 12;
+  --grid-cols: 12;
   --clock: #7df
   font-family: 'Sofia Sans', Helvetica, sans-serif;
   font-weight: 500;
@@ -906,19 +939,22 @@ background-image {
 
 #root header {
   display: flex;
-  flex-direction: row;
-  gap: 50px;
   align-items: center;
-  margin-top: 30vh;
+  margin-top: 10vh;
 }
 
-#root header span {
+#root header div {
   -webkit-mask: linear-gradient(to right, #fff 45%, transparent 55%) 0 0 / 220% 100% no-repeat;
   opacity: clamp(.7, .75 * var(--scroll, 0) + .7, .85);
   animation: bio-fade 2s ease-in-out 1.9s both;
   color: yellow;
   font-size: clamp(18px, 3vmin, 25px);
   font-weight: 600;
+}
+
+name-image {
+  width: auto;
+  background: url(../public/maestro.png) center/cover no-repeat;
 }
 
 widget-card {

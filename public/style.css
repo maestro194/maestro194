@@ -7,7 +7,7 @@
   --background-image: url('https://maestro194.is-a.dev/public/bg.jpg');
   --opacity: 0.7;
 
-  --gril-cols: 12;
+  --grid-cols: 12;
 
   --clock: #7df
   font-family: 'Sofia Sans', Helvetica, sans-serif;
@@ -62,13 +62,11 @@ background-image {
 
 #root header {
   display: flex;
-  flex-direction: row;
-  gap: 50px;
   align-items: center;
-  margin-top: 30vh;
+  margin-top: 10vh;
 }
 
-#root header span {
+#root header div {
   -webkit-mask: linear-gradient(to right, #fff 45%, transparent 55%) 0 0 / 220% 100% no-repeat;
   opacity: clamp(.7, .75 * var(--scroll, 0) + .7, .85);
   animation: bio-fade 2s ease-in-out 1.9s both;
@@ -79,7 +77,6 @@ background-image {
 
 name-image {
   width: auto;
-  position: absolute;
   background: url(../public/maestro.png) center/cover no-repeat;
 }
 
