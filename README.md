@@ -1,5 +1,7 @@
 ### Hi there 👋
 
+# Ganyu
+
 # ☕ Discord & osu!
 
 <p align="center"><a><img src="https://lanyard.cnrad.dev/api/598868698157285376" /></a></p>

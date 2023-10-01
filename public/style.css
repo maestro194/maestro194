@@ -7,8 +7,6 @@
   --background-image: url('https://maestro194.is-a.dev/public/bg.jpg');
   --opacity: 0.7;
 
-  --grid-cols: 12;
-
   --clock: #7df
   font-family: 'Sofia Sans', Helvetica, sans-serif;
   font-weight: 500;
@@ -60,13 +58,13 @@ background-image {
   background: url(../public/bg.jpg) center/cover no-repeat;
 }
 
-#root header {
-  display: flex;
+header {
+  display: block;
   align-items: center;
   margin-top: 10vh;
 }
 
-#root header div {
+header div {
   -webkit-mask: linear-gradient(to right, #fff 45%, transparent 55%) 0 0 / 220% 100% no-repeat;
   opacity: clamp(.7, .75 * var(--scroll, 0) + .7, .85);
   animation: bio-fade 2s ease-in-out 1.9s both;
@@ -80,12 +78,44 @@ name-image {
   background: url(../public/maestro.png) center/cover no-repeat;
 }
 
+main{
+  --grid-col: 12;
+  grid-template-columns: repeat(var(--grid-col), 1fr);
+  grid-column: span var(--grid-col);
+}
+
+bento-grid{
+  --max-width-square: 60px;
+  --max-height-square: 60px;
+}
+
 widget-card {
   --c: min(var(--cols, 2), var(--grid-cols));
   --r: var(--rows, 2);
-  width: calc(var(--square-size) * var(--c) + var(--gap) * (var(--c) - 1)) ;
+  width: calc(var(--square-size) * var(--c) + var(--gap) * (var(--c) - 1));
+  height: calc(var(--square-size) * var(--r) + var(--gap) * (var(--c) - 1));
+
 }
 
 repo-grid {
+  display: flex;
+  flex-direction: row
+}
 
+@media screen and (max-width: 960px) {
+  main{
+    --grid-col: 8;
+  }
+  repo-grid{
+    display: block;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  main{
+    --grid-col: 4;
+  }
+  repo-grid{
+    display: block;
+  }
 }
