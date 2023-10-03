@@ -2,6 +2,8 @@
 
 # Ganyu
 
+<p align="center"><a href="https://maestro194.is-a.dev/Ganyu"><img src="https://maestro194.is-a.dev/Ganyu" width="75%"></a></p>
+
 # ☕ Discord & osu!
 
 <p align="center"><a><img src="https://lanyard.cnrad.dev/api/598868698157285376" /></a></p>
