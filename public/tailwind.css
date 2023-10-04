@@ -618,8 +618,22 @@ video {
   grid-row-start: 3;
 }
 
+.row-start-5{
+  grid-row-start: 5;
+}
+
 .m-5{
   margin: 1.25rem;
+}
+
+.mx-4{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mx-8{
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .mx-auto{
@@ -687,6 +701,10 @@ video {
   width: 0.25rem;
 }
 
+.w-5{
+  width: 1.25rem;
+}
+
 .w-6{
   width: 1.5rem;
 }
@@ -723,6 +741,14 @@ video {
   resize: both;
 }
 
+.grid-flow-row{
+  grid-auto-flow: row;
+}
+
+.grid-flow-col{
+  grid-auto-flow: column;
+}
+
 .grid-cols-12{
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
@@ -737,6 +763,10 @@ video {
 
 .grid-cols-8{
   grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-cols-9{
+  grid-template-columns: repeat(9, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -960,29 +990,6 @@ header div {
   font-weight: 600;
 }
 
-name-image {
-  width: auto;
-  background: url(../public/maestro.png) center/cover no-repeat;
-}
-
-main{
-  --grid-col: 12;
-  grid-template-columns: repeat(var(--grid-col), 1fr);
-  grid-column: span var(--grid-col);
-}
-
-bento-grid{
-  --max-width-square: 60px;
-  --max-height-square: 60px;
-}
-
-widget-card {
-  --c: min(var(--cols, 2), var(--grid-cols));
-  --r: var(--rows, 2);
-  width: calc(var(--square-size) * var(--c) + var(--gap) * (var(--c) - 1));
-  height: calc(var(--square-size) * var(--r) + var(--gap) * (var(--c) - 1));
-}
-
 repo-grid {
   display: flex;
   flex-direction: row
@@ -998,17 +1005,35 @@ repo-grid {
   }
 }
 
-@media screen and (max-width: 720px) {
-  main{
-    --grid-col: 4;
-  }
-
-  repo-grid{
-    display: block;
-  }
-}
-
 .hover\:bg-blue-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px){
+  .md\:col-span-8{
+    grid-column: span 8 / span 8;
+  }
+
+  .md\:row-start-3{
+    grid-row-start: 3;
+  }
+
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-8{
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:col-span-4{
+    grid-column: span 4 / span 4;
+  }
+
+  .lg\:grid-cols-12{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
 }

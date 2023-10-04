@@ -73,30 +73,6 @@ header div {
   font-weight: 600;
 }
 
-name-image {
-  width: auto;
-  background: url(../public/maestro.png) center/cover no-repeat;
-}
-
-main{
-  --grid-col: 12;
-  grid-template-columns: repeat(var(--grid-col), 1fr);
-  grid-column: span var(--grid-col);
-}
-
-bento-grid{
-  --max-width-square: 60px;
-  --max-height-square: 60px;
-}
-
-widget-card {
-  --c: min(var(--cols, 2), var(--grid-cols));
-  --r: var(--rows, 2);
-  width: calc(var(--square-size) * var(--c) + var(--gap) * (var(--c) - 1));
-  height: calc(var(--square-size) * var(--r) + var(--gap) * (var(--c) - 1));
-
-}
-
 repo-grid {
   display: flex;
   flex-direction: row
@@ -105,15 +81,6 @@ repo-grid {
 @media screen and (max-width: 960px) {
   main{
     --grid-col: 8;
-  }
-  repo-grid{
-    display: block;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  main{
-    --grid-col: 4;
   }
   repo-grid{
     display: block;

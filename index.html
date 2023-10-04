@@ -14,7 +14,7 @@
 </head>
 
 <body style="--scroll: 0;">
-  <div id="root">  
+  <div id="root" class="min-width-{640px}">  
     <background-filter>
       <background-image>
     </background-filter>
@@ -31,12 +31,12 @@
       </p>
     </header>
     
-    <main class="grid gap-10">
-      <bento-grid class="grid col-span-8 gap-10 overflow-hidden mb-10 mx-auto">
-        <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
-          <a class="flex-row box-border p-6 w-full h-full text-inherit" href="https://www.facebook.com/profile.php?id=100014348434806">
-            <widget-content class="flex flex-col">
-              <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+    <main class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12">
+      <bento-grid class="mx-4 mb-10 grid gap-10 grid-cols-4 col-span-4 md:grid-cols-8 md:col-span-8">
+        <widget-card class="col-span-2 bg-blue-50 hover:bg-blue-100 rounded-2xl aspect-square opacity-70">
+          <a href="https://www.facebook.com/profile.php?id=100014348434806">
+            <widget-content class="">
+              <widget-icon></widget-icon>
               <widget-meta>
                 <div class="font-bold">Facebook</div>
                 <div class="opacity-70 text-sm">Đông Lê</div>
@@ -45,10 +45,10 @@
           </a>
         </widget-card>
 
-        <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
-          <a class="flex-row box-border p-6 w-full h-full text-inherit" href="https://youtube.com/@Maestro_4194">
-            <widget-content class="flex flex-col">
-              <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+        <widget-card class="col-span-2 bg-blue-50 hover:bg-blue-100 rounded-2xl aspect-square opacity-70">
+          <a href="https://youtube.com/@Maestro_4194">
+            <widget-content>
+              <widget-icon></widget-icon>
               <widget-meta>
                 <div class="font-bold">Youtube</div>
                 <div class="opacity-70 text-sm">Maestro_419</div>
@@ -57,10 +57,10 @@
           </a>
         </widget-card>
 
-        <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
-          <a class="flex-row box-border p-6 w-full h-full text-inherit" href="https://github.com/maestro194">
-            <widget-content class="flex flex-col">
-              <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+        <widget-card class="col-span-2 bg-blue-50 hover:bg-blue-100 rounded-2xl aspect-square opacity-70">
+          <a href="https://github.com/maestro194">
+            <widget-content>
+              <widget-icon></widget-icon>
               <widget-meta>
                 <div class="font-bold">Github</div>
                 <div class="opacity-70 text-sm">maestro194</div>
@@ -69,10 +69,10 @@
           </a>
         </widget-card>
 
-        <widget-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden aspect-square opacity-70">
-          <a class="flex-row box-border p-6 w-full h-full text-inherit" href="#">
-            <widget-content class="flex flex-col">
-              <widget-icon class="w-8 h-8 overflow-hidden"></widget-icon>
+        <widget-card class="col-span-2 bg-blue-50 hover:bg-blue-100 rounded-2xl aspect-auto opacity-70">
+          <a href="#">
+            <widget-content>
+              <widget-icon></widget-icon>
               <widget-meta>
                 <div class="font-bold">LinkedIn</div>
               </widget-meta>
@@ -80,15 +80,15 @@
           </a>
         </widget-card>
 
-        <div class="col-span-4 row-span-2 row-start-3 p-2 bg-blue-50">box9</div>
-        <div class="col-span-4 row-span-2 row-start-3 p-2 bg-blue-50">box0</div>
+        <div class="col-span-4 row-span-2 p-2 bg-blue-50">box9</div>
+        <div class="col-span-4 row-span-2 p-2 bg-blue-50">box0</div>
       </bento-grid>
 
-      <repo-grid class="col-span-4 gap-10">
-        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box5</repo-card>
-        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box6</repo-card>
-        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box7</repo-card>
-        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box8</repo-card>
+      <repo-grid class="gap-10 col-span-4 grid grid-cols-4 md:grid-cols-2 md:col-span-8 lg:col-span-4 grid-flow-row mx-4">
+        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box5 of repo</repo-card>
+        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box6 of repo</repo-card>
+        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box7 of repo</repo-card>
+        <repo-card class="col-span-2 row-span-2 p-2 rounded-2xl bg-blue-50 hover:bg-blue-100 overflow-hidden opacity-70">box8 of repo</repo-card>
       </repo-grid>
     </main>
     
