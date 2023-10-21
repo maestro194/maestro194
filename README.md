@@ -1,8 +1,8 @@
 ### Hi there 👋
 
-# Ganyu
+<!-- # Ganyu
 
-<p align="center"><a href="https://maestro194.is-a.dev/Ganyu"><img src="https://maestro194.is-a.dev/Ganyu" width="75%"></a></p>
+<p align="center"><a href="https://maestro194.is-a.dev/Ganyu"><img src="https://maestro194.is-a.dev/Ganyu" width="75%"></a></p> -->
 
 # ☕ Discord & osu!
 
