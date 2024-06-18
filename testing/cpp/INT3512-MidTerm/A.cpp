@@ -39,19 +39,41 @@ void FileInOut()
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
 int n;
-int a[22][22];
+long long k;
+int p[1000010];
 
 void Solve()
 {
-  double ans;
-  
-  cin >> n;
-  for(int i = 0; i < n; i ++)
-    for(int j = 0; j < n; j ++)
-      cin >> a[i][j];
-  
-  cout << setprecision(6) << fixed;
-  cout << ans << endl;
+  cin >> n >> k;
+
+  int cur = n;
+
+  for(int i = 1; i <= n; i ++) {
+    if(k >= n - i) {
+      p[i] = cur;
+      cur --;
+      k -= n - i;
+    }
+    else {
+      if (k == 0)
+        i --;
+      else
+        p[i] = k + 1;
+      
+      p[i + 1] = 1;
+
+      for(int j = i + 2; j <= n; j ++) {
+        p[j] = p[j - 1] + 1;
+
+        if(p[i] == p[j])
+          p[j] ++;
+      }
+      break;
+    }
+  }
+
+  for(int i = 1; i <= n; i ++)
+    cout << p[i] << " ";
 }
 
 int32_t main()

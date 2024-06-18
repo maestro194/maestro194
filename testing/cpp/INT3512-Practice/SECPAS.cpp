@@ -39,19 +39,35 @@ void FileInOut()
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
 int n;
-int a[22][22];
+int cnt = 0;
+int sq;
 
 void Solve()
 {
-  double ans;
-  
   cin >> n;
-  for(int i = 0; i < n; i ++)
-    for(int j = 0; j < n; j ++)
-      cin >> a[i][j];
-  
-  cout << setprecision(6) << fixed;
-  cout << ans << endl;
+  sq = sqrt(n);
+  for(int a = 0; a <= sq; a ++) {
+    for(int b = 0; b <= sq; b ++) {
+      if(a * a + b * b > n)
+        break;
+
+      for(int c = 0; c <= sq; c ++) {
+        if (a * a + b * b + c * c > n)
+          break;
+        
+        for(int d = 0; d <= sq; d ++) {
+          if(a * a + b * b + c * c + d * d == n) {
+            cnt ++;
+            break;
+          }
+          if(a * a + b * b + c * c + d * d > n) {
+            break;
+          }
+        }
+      }
+    }
+  }
+  cout << cnt;
 }
 
 int32_t main()

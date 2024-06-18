@@ -39,19 +39,34 @@ void FileInOut()
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
 int n;
-int a[22][22];
+string s;
+long long f[4][1000010];
+int mod = 1000000007;
 
 void Solve()
 {
-  double ans;
-  
   cin >> n;
-  for(int i = 0; i < n; i ++)
-    for(int j = 0; j < n; j ++)
-      cin >> a[i][j];
-  
-  cout << setprecision(6) << fixed;
-  cout << ans << endl;
+  cin >> s;
+
+  for(int i = 0; i < n; i ++) {
+    if(s[i] == 'B')
+      f[0][i] ++;
+    else if (s[i] == 'A')
+      f[1][i] += f[0][i - 1];
+    else if (s[i] == 'C')
+      f[2][i] += f[1][i - 1];
+    else 
+      f[3][i] += f[2][i - 1];
+
+    for(int j = 0; j < 4; j ++)
+      f[j][i] %= mod;
+    for(int j = 0; j < 4; j ++)
+      f[j][i] += f[j][i - 1];
+    for(int j = 0; j < 4; j ++)
+      f[j][i] %= mod;
+  }
+
+  cout << f[3][n - 1];
 }
 
 int32_t main()

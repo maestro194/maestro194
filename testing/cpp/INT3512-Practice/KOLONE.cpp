@@ -38,20 +38,45 @@ void FileInOut()
 // unusual mod : 1000003999
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
-int n;
-int a[22][22];
+int n, m;
+string a, b;
+int t;
 
 void Solve()
 {
-  double ans;
-  
-  cin >> n;
-  for(int i = 0; i < n; i ++)
-    for(int j = 0; j < n; j ++)
-      cin >> a[i][j];
-  
-  cout << setprecision(6) << fixed;
-  cout << ans << endl;
+  cin >> n >> m;
+  cin >> a >> b;
+  cin >> t;
+
+  bool sw = (t > 0);
+  int cnt = 0;
+  vector<char> v;
+  vector<int> pos;
+
+  for(int i = n - 1; i >= 0; i --)
+    v.push_back(a[i]), pos.push_back(1);
+  for(int i = 0; i < m; i ++)
+    v.push_back(b[i]), pos.push_back(2);
+
+  while(sw) {
+    sw = false;
+    cnt ++;
+
+    for (int i = 0; i < n + m - 1; i ++) {
+      if (pos[i] == 1 && pos[i + 1] == 2) {
+        swap(v[i], v[i + 1]);
+        swap(pos[i], pos[i + 1]);
+        i ++;
+        sw = true;
+      }
+    }
+
+    if (cnt == t)
+      sw = false;
+  }
+
+  for(char c : v) cout << c;
+
 }
 
 int32_t main()
@@ -70,4 +95,3 @@ int32_t main()
   double t = duration.count() * 1.0 / 1000000;
   // cout << endl << "Runtime: " << t << endl;
 }
-

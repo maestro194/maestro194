@@ -38,20 +38,22 @@ void FileInOut()
 // unusual mod : 1000003999
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
-int n;
-int a[22][22];
+string a[3];
+char b[3];
+
+bool cmp(string a, string b) {
+  if(a.size() != b.size()) return a.size() < b.size();
+  return a < b;
+}
 
 void Solve()
 {
-  double ans;
-  
-  cin >> n;
-  for(int i = 0; i < n; i ++)
-    for(int j = 0; j < n; j ++)
-      cin >> a[i][j];
-  
-  cout << setprecision(6) << fixed;
-  cout << ans << endl;
+  cin >> a[0] >> a[1] >> a[2];
+  cin >> b[0] >> b[1] >> b[2];
+
+  sort (a, a + 3, cmp);
+
+  cout << a[b[0] - 'A'] << " " << a[b[1] - 'A'] << " " << a[b[2] - 'A'];
 }
 
 int32_t main()

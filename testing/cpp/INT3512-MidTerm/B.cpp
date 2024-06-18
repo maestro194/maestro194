@@ -39,19 +39,46 @@ void FileInOut()
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
 int n;
-int a[22][22];
+int a[500050];
+vector<int> b;
+ll T[2000020];
+
+void update(int x, int v) {
+  while(x <= n) {
+    T[x] += v;
+    x += x & (-x);
+  }
+}
+
+ll get(int x) {
+  ll res = 0;
+  while (x > 0) {
+    res += T[x];
+    x -= x & (-x);
+  }
+  return res;
+}
 
 void Solve()
 {
-  double ans;
-  
   cin >> n;
-  for(int i = 0; i < n; i ++)
-    for(int j = 0; j < n; j ++)
-      cin >> a[i][j];
+  for(int i = 1; i <= n; i ++) {
+    cin >> a[i];
+    b.push_back(a[i]);
+  }
+  sort(all(b));
+  b.resize(unique(all(b)) - b.begin());
+
+  for(int i = 1; i <= n; i ++)
+    a[i] = lower_bound(all(b), a[i]) - b.begin() + 1;
+
+  ll ans = 0;
+  for(int i = n; i > 0; i --) {
+    ans += get(a[i] - 1);
+    update(a[i], 1);
+  }
+  cout << ans;
   
-  cout << setprecision(6) << fixed;
-  cout << ans << endl;
 }
 
 int32_t main()

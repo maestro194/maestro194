@@ -38,20 +38,50 @@ void FileInOut()
 // unusual mod : 1000003999
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
-int n;
-int a[22][22];
+int n, k;
+int a[500005];
+int pre[32][500005];
 
 void Solve()
 {
-  double ans;
-  
-  cin >> n;
-  for(int i = 0; i < n; i ++)
-    for(int j = 0; j < n; j ++)
-      cin >> a[i][j];
-  
-  cout << setprecision(6) << fixed;
-  cout << ans << endl;
+  cin >> n >> k;
+  for(int i = 1; i <= n; i ++) 
+    cin >> a[i];
+
+  for(int i = 1; i <= n; i ++) {
+    for(int j = 0; j < 30; j ++) {
+      if(a[i] & (1 << j))
+        pre[j][i] = pre[j][i - 1] + 1;
+      else 
+        pre[j][i] = pre[j][i - 1];
+    }
+  }
+
+  int ans = 0;
+  for(int i = 1; i <= n; i ++) {
+    int l = i, r = n, m;
+
+    while (l <= r) {
+      m = (l + r) >> 1;
+      int sum = 0;
+
+      for(int j = 0; j < 30; j ++)
+        if(pre[j][m] - pre[j][i - 1] == m - i + 1)
+          sum += (1 << j);
+      
+      // cout << " " << i << " " << m << " " << sum << endl;
+
+      if(sum >= k)
+        l = m + 1;
+      else 
+        r = m - 1;
+    }
+    // cout << i << " " << r << endl;
+
+    ans = max(ans, r - i + 1);
+  }
+  cout << ans;
+
 }
 
 int32_t main()
