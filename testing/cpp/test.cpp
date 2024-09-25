@@ -7,7 +7,7 @@
 #pragma GCC optimization ("unrolled-loops")
 using namespace std;
 
-#define filename "test"
+#define filename ""
 #define endl '\n'
 #define X first
 #define Y second
@@ -38,45 +38,26 @@ void FileInOut()
 // unusual mod : 1000003999
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
-int a, b, c;
-int d[1005][3];
+int card;
 
 void Solve()
 {
-  cin >> a >> b >> c;
+  srand(time(NULL));
 
-  for(int i = 0; i < 16 + 12 + 6; i ++) {
-    cin >> d[i][0] >> d[i][1] >> d[i][2];
-  }
-
-  for(int i = 0; i < a; i ++) {
-    for(int j = 0; j < b; j ++) {
-      for(int k = 0; k < c; k ++) {
-        vector<pair<int, pii>> v;
-        for(int gt2 = i * 4; gt2 < (i + 1) * 4; gt2 ++)
-          v.pb({d[gt2][0], {d[gt2][1], d[gt2][2]}});
-        for(int ktct = 16 + j * 2; ktct < 16 + (j + 1) * 2; ktct ++)
-          v.pb({d[ktct][0], {d[ktct][1], d[ktct][2]}});
-        // for(int thht = 28 + k * 3; thht < 28 + (k + 1) * 3; thht ++)
-        //   v.pb({d[thht][0], {d[thht][1], d[thht][2]}});
-        
-        sort(all(v));
-
-        for(int id = 0; id < v.size() - 1; id ++)
-          if(v[id] == v[id + 1])
-            break;
-        for(int id = 0; id < v.size() - 1; id ++)
-          if(v[id].X == v[id + 1].X && v[id].Y.Y + 1 == v[id + 1].Y.X)
-            v[id].Y = {v[id].Y.X, v[id + 1].Y.Y}, v.erase(v.begin() + id + 1);
-        
-        if (v.size() <= 5) {
-          cout << "Total: " << v.size() << endl;
-          for(int id = 0; id < v.size(); id ++)
-            cout << v[id].X << " " << v[id].Y.X << " " << v[id].Y.Y << endl;
-          cout << endl;
-        }
-      }
+  while(cin >> card) {
+    if (card == 0) {
+      return;
     }
+  
+    int card2 = rand() % 13 + 2;
+    if (card2 == card)
+      cout << "EQUAL" << endl;
+    else if (card2 > card)
+      cout << "OVER" << endl;
+    else
+      cout << "UNDER" << endl;
+
+    cout.flush();
   }
 }
 
