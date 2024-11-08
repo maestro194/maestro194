@@ -4,12 +4,14 @@
 @tailwind utilities;
 
 :root {
-  --background-image: url('https://maestro194.is-a.dev/public/bg.jpg');
+  --background-image: url('https://maestro194.is-a.dev/public/background.jpg');
   --opacity: 0.7;
 
   --clock: #7df
   font-family: 'Sofia Sans', Helvetica, sans-serif;
   font-weight: 500;
+  line-height: 1.4;
+
 }
 
 html,
@@ -38,6 +40,12 @@ body {
   max-width: min(100% - 50px, 1280px);
 }
 
+body:not(.touch-device) background-filter {
+  --multiplier: clamp(0, calc(-5 * var(--scroll, 0) + 1.5), 1);
+  transform: translate(calc(var(--tx, 0) * var(--multiplier, 1)), calc(var(--ty, 0) * var(--multiplier, 1)));
+  transition: transform .1s linear 0s;
+}
+
 background-filter {
   filter: blur(clamp(0px, calc(50px * var(--scroll, 0) + -5px), 10px)) brightness(.7);
   position: fixed;
@@ -46,16 +54,10 @@ background-filter {
   background-color: #7bf;
 }
 
-body:not(.touch-device) background-filter {
-  --multiplier: clamp(0, calc(-5 * var(--scroll, 0) + 1.5), 1);
-  transform: translate(calc(var(--tx, 0) * var(--multiplier, 1)), calc(var(--ty, 0) * var(--multiplier, 1)));
-  transition: transform .1s linear 0s;
-}
-
 background-image {
   position: absolute;
   inset: 0;
-  background: url(../public/bg.jpg) center/cover no-repeat;
+  background: url(../public/background.jpg) center/cover no-repeat;
 }
 
 header {
@@ -73,16 +75,85 @@ header div {
   font-weight: 600;
 }
 
-repo-grid {
-  display: flex;
-  flex-direction: row
+.widget-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 60px;
+  margin-top: max(0px, calc(-140vh * var(--scroll) + 35vh));
+  margin-bottom: calc(35vh - max(0px, calc(-140vh * var(--scroll) + 35vh)));
 }
 
-@media screen and (max-width: 960px) {
-  main{
-    --grid-col: 8;
+@media (max-width: 1280px) {
+  .widget-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
   }
-  repo-grid{
-    display: block;
+}
+
+@media (max-width: 880px) {
+  .widget-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 480px;
   }
+}
+
+main {
+  --template-columns: 8;
+  --gap: 40pxl
+  display: grid;
+  grid-template-columns: repeat(var(--template-columns), 1fr);
+  grid-column: span 8;
+  gap: var(--gap);
+  height: fit-content;
+}
+
+@media (max-width: 880px) {
+  main {
+    --template-columns: 4;
+    --gap: 20px;
+  }
+}
+
+widget-card {
+  --square-size: calc((((min(1280px, 100vw - 100px) - (60px * 11)) / 12) * 8 + (60px - var(--gap)) * 7) / 8);
+  --c: min(var(--column, 2), var(var(--template-columns)));
+  --r: var(--row, 2);
+  grid-row: span var(--r);
+  grid-column: span var(--c);
+  transition: transform .2s linear, background-color .2s linear;
+  border-radius: 24px;
+  height: calc(var(--square-size) * var(--r) + var(--gap) * (var(--r) - 1));
+  overflow: hidden;
+  color: #000;
+}
+
+@media (max-width: 1280px) {
+  widget-card {
+    --square-size: calc((min(960px, 100vw - 100px) - (var(--gap) * 7) / 8));
+  }
+}
+
+@media (max-width: 880px) {
+  widget-card {
+    --square-size: calc((max(320px, min(480px, 100vw - 50px) - (var(--gap) * 3) / 4)));
+  }
+}
+
+widget-card:hover {
+  transform: scale(1.05);
+}
+
+widget-card>a {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  color: inherit;
+  padding: 20px;
 }
