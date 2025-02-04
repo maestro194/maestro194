@@ -1,0 +1,326 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[colorlinks = true,
+            linkcolor = red,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\hypersetup{pdfborder = 0 0 0}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Le Quang Dong} \\ \vspace{1pt}
+    \small
+    \raisebox{-0.1\height}\faPhone\ +84-963-974-641 ~
+    \href{mailto:lequangdong.work@gmail.com}{\faEnvelope\ lequangdong.work@gmail.com} ~ 
+    % \href{https://www.linkedin.com/in/quang-dong-le-a23a57243/}{\faLinkedin\ -linkedin-id}  ~
+    \href{https://github.com/maestro194}{\faGithub\ maestro194}
+    \vspace{-8pt}
+\end{center}
+
+
+% -----------Summary-----------
+\section{Objective}
+  \small{I'm seeking an entry-level position to begin my career in a high-level professional environment.}
+\vspace{-5pt}
+% adjust vscape based on the space you want to leave between each section.
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {VNU University of Engineering and Technology, Hanoi}{9/2021 -- (ongoing)}
+      {Bachelor of Information Technology}{}
+      % {GPA: 4/4}
+      %leave a line after this
+      
+      % \small{\textbf{Coursework: Course-1, Course-2, Course-3, Course-4}}
+    \resumeSubheading
+      {Nguyen Hue High school for the Gifted, Hanoi}{9/2018 -- 5/2021}
+      {Specialize in Informatics}{}
+      % {GPA: 4/4}
+      %leave a line after this
+      
+      % \small{\textbf{Coursework: Course-1, Course-2, Course-3, Course-4}}  
+  \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------Technical Skilss-----------
+\section{Skills}
+    \resumeSubHeadingListStart
+        \resumeSubItem
+            {\textbf{Technical Skills}}
+            \resumeItemListStart
+                \resumeItem{Programming Languages: C++, HTML/CSS, Java, Kotlin(TBA), PHP, SQL}
+                \resumeItem {Tools: Git, Visual Studio, IntellijIDEA, Android Studio}
+            \resumeItemListEnd
+
+        \resumeSubItem
+            {\textbf{General Skills}}
+            \resumeItemListStart
+                \resumeItem {Languages: Vietnamese(Native), English (C level), Japanese (N4)}
+                \resumeItem {Tools: Adobe Photoshop, Adobe Illustrator, Microsoft Office}
+            \resumeItemListEnd
+    
+    \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------Technical Skilss-----------
+\section{Skills}
+    \resumeSubHeadingListStart
+        \resumeSubItem
+            {\textbf{Technical Skills}}
+            \resumeItemListStart
+                \resumeItem{
+                    Programming Languages:
+                    \begin{itemize}
+                        \item C++: Mainly used for competitive programming practice
+                        \item HTML/CSS/JS: Have used the Vite build tool to build a website for the Web Application Development term final (MagicPost) in university
+                        \item Java: Used for OOP practice, have worked with the JavaFX library to create a remake of Bomberman
+                        \item Kotlin: Have created an fully functional Android application with Jetpack Compose and Android Studio
+                        \item MySQL/MongoDB: Have created simple databases for studying and applications up to 2NF level
+                    \end{itemize}
+                }
+            \resumeItemListEnd
+
+        \resumeSubItem
+            {\textbf{General Skills}}
+            \resumeItemListStart
+                \resumeItem {
+                    Languages: 
+                    \begin{itemize}
+                        \item Vietnamese(Native)
+                        \item English (7.0 IELTS - Issued in 2020)
+                    \end{itemize}
+                }
+                \resumeItem {
+                    Soft skills: 
+                    \begin{itemize}
+                        \item Energetic and passionate with duties
+                        \item Always be all ears with feedback about working attitudes
+                        \item Have little difficulty befriending colleagues and friends
+                    \end{itemize}
+                }
+            \resumeItemListEnd
+    
+    \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+%-----------PROJECTS-----------
+\section{Past projects}
+    \vspace{-6pt}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+              {\textbf{Baget} $|$ \emph{Kotlin, Jetpack Compose |  \href{https://github.com/maestro194/tetris}{Git} }}{Sep 2023 -- Jan 2024}
+              \resumeItemListStart
+                \resumeItem{ A individual expense application for Android}
+                \resumeItem{ Mainly working on UI/UX design for the application}
+                \resumeItem{ Working as a team of 4}
+              \resumeItemListEnd
+              \vspace{-14pt}
+        \resumeProjectHeading
+              {\textbf{MagicPost} $|$ \emph{MERN Stack with Vite -  \href{https://github.com/maestro194/MagicPost}{Git} }}{Nov 2023 -- Dec 2023}
+              \resumeItemListStart
+                \resumeItem{ A package delivery management system for a company with a national-wide coverage}
+                \resumeItem{ Submitted as a web development application final}
+                \resumeItem{ Working as an individual}
+              \resumeItemListEnd
+              \vspace{-14pt}
+        \resumeProjectHeading
+              {\textbf{Bomberman} $|$ \emph{Java, Git }}{Sep 2022 -- Jan 2023}
+              \resumeItemListStart
+                \resumeItem{ Recreating the game with JavaFX library of Java.}
+                \resumeItem{ Using Github to store the game production.}
+                \resumeItem{ Working as a team of 2}
+              \resumeItemListEnd
+              \vspace{-14pt}
+        \resumeProjectHeading
+              {\textbf{Financial Management App} $|$ \emph{HTML/CSS/JS, Tini App }}{Jun 2022 -- Jul 2022}
+              \resumeItemListStart
+                \resumeItem{ UI/UX Designer for the app.}
+                \resumeItem{ Using Tini App to deploy the app on Tiki Mini App store.}
+              \resumeItemListEnd
+              \vspace{-14pt}
+        \resumeProjectHeading
+              {\textbf{Tetris} $|$ \emph{C++, SDL2 - \href{https://github.com/maestro194/tetris}{Git}}}{Feb 2022 -- May 2022}
+              \resumeItemListStart
+                \resumeItem{ Recreate modern Tetris variation with new pieces rotating system}
+                \resumeItem{ Learn to work with SDL2 library }
+              \resumeItemListEnd
+              \vspace{-14pt}
+    
+        \resumeProjectHeading
+        {\textbf{A Probing Approach To Solving Nonograms} $-$ \emph{\href{https://drive.google.com/file/d/1Ak0ZSaG-Jj1fdJP25AkM2U5A0Xu58Zad/view?usp=sharing}{Paper}}}{Oct 2022 -- Jul 2023}
+        \resumeItemListStart
+                \resumeItem{This paper proposes a probing method to solve pixels upon a dynamic programming method for line solving before running backtracking to fully solve a Nonogram puzzle.}
+                \resumeItem{Finished under the mentorship of Do Duc Dong - Lecturer in Computer Science, VNU University of Engineering and Technology}
+    
+    \resumeSubHeadingListEnd
+\vspace{0pt}
+
+%-----------EXPERIENCE-----------
+\section{Achievements}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\textbf{Semi-Finalist}}{July 2022}
+      {  Tiki Hackingtrail 2022}{Ho Chi Minh City, Vietnam}
+      \vspace{0pt}
+      \resumeItemListStart
+        \resumeItem {An event for programmers to contribute their ideas for an app that will benefit for society}
+        \resumeItem {Creator for the Finacial Management App that allows users to record theirs transactions, having spending reports and expense prediction curve to help balancing income and expense}
+      \resumeItemListEnd
+    \vspace{5pt}    
+    \resumeSubheading
+      {\textbf{Bronze Medal}}{Jan 2021}
+      {  Vietnam National Olympiad in Informatics}{Hanoi, Vietnam}
+      \vspace{0pt}
+      \resumeItemListStart
+        \resumeItem {A national-wide competition for highschool students to compete for a slot in the national IOI team}
+      \resumeItemListEnd
+    \vspace{5pt}
+    \resumeSubheading
+      {\textbf{Silver Medal}}{Jun 2020}
+      { Coastal Region - Northern Delta area Competition in Informatics}{Hanoi, Vietnam}
+      \vspace{0pt}
+      \resumeItemListStart
+        \resumeItem {Regional competition, open invitational participant}
+      \resumeItemListEnd
+    \vspace{5pt}
+    \resumeSubheading
+      {\textbf{Finalist}}{Jun 2020}
+      { National Young Informatics Contest}{Ho Chi Minh City, Vietnam}
+      \vspace{0pt}
+      \resumeItemListStart
+        \resumeItem {A national-wide informatics contest for highschool students in Vietnam under IOI format.}
+      \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+\vspace{-5pt}
+
+
+
+%------------Publications-----------
+% \section{Publication}
+% \vspace{-6pt}
+%     \resumeSubHeadingListStart
+%     \resumeProjectHeading
+%     {\textbf{A Probing Approach To Solving Nonograms} $|$ \emph{\href{https://easychair.org/conferences/submission_download?upload=135726;a=31408958;submission=6624372}{Paper}}}{Jul 2023}
+%     \resumeItemListStart
+%             \resumeItem{This paper proposes a probing method to solve pixels upon a dynamic programming method for line solving before running backtracking to fully solve a Nonogram puzzle.}
+%           \resumeItemListEnd
+%     \resumeSubHeadingListEnd
+% \vspace{-16pt}
+% adjust vscape based on the space you want to leave between each section.
+
+% %-----------PROGRAMMING SKILLS-----------
+% \section{Certifications}
+% \textbf{Certificate 1}{: Title} \\
+% \textbf{Certificate 2} {: Title}
+
+
+
+\end{document}
