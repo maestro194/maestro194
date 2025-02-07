@@ -27,7 +27,7 @@ export default function Home() {
                     </div>
                     <div class="weather">
                         <div class="weatherIcon">
-                            <img src="assets/icons/OneDark/unknown.png" />
+                            {/* <img src="assets/icons/OneDark/unknown.png" /> */}
                         </div>
                         <div class="weatherValue">
                             <p>- °<span class="g">c</span></p>
