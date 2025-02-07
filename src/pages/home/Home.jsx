@@ -3,15 +3,7 @@ import React from 'react'
 export default function Home() {
   return (
     <>
-        <head>
-            <meta charset="UTF-8" />
-            <title>Welcome</title>
-            <link rel=" shortcut icon" type="image/png" href="assets/icons/favicon.png" />
-            <link rel="stylesheet" href="app.css" />
-            <script src="https://unpkg.com/lucide@latest"></script>
-        </head>
-
-        <body class="">
+        <div class="">
             <button id="themeButton">
                 <i id="themeIcon" icon-name="moon"></i>
             </button>
@@ -66,7 +58,7 @@ export default function Home() {
             <script>
                 lucide.createIcons();
             </script>
-        </body>
+        </div>
     </>
   )
 }
