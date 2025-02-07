@@ -650,17 +650,6 @@ export default function Home() {
                 </div>
             </div>
 
-            <script src="config.js"></script>
-
-            <script src="assets/js/layout.js"></script>
-            <script src="assets/js/theme.js"></script>
-            <script src="assets/js/time.js"></script>
-            <script src="assets/js/greeting.js"></script>
-            <script src="assets/js/weather.js"></script>
-
-            <script src="assets/js/buttons.js"></script>
-            <script src="assets/js/lists.js"></script>
-
             <script>
                 lucide.createIcons();
             </script>
