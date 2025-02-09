@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-
+import backgroundImage from './components/background.jpg'
 
 export default function Home() {
     const [time, setTime] = useState({
@@ -69,21 +69,25 @@ export default function Home() {
     },[]);
 
   return (
-    <div className='w-[100vw] h-[100vh] flex items-center justify-center font-(Nunito) text-black text-5xl bg-amber-100'>
+    <div className='w-[100vw] h-[100vh] flex items-center justify-center font-(Nunito) text-black text-5xl
+        
+    '>
         <button id="themeButton" className='absolute top-2 right-2 cursor-pointer'>
-            <img src='assets/icons/OneDark/01d.png' className='w-6 h-6'></img>
+            <img src='maestro194/Bento/assets/icons/OneDark/01d.png' className='w-6 h-6'></img>
         </button>
 
-        <div className="container w-[145vh] h-[85vh] grid grid-cols-4 grid-rows-4 gap-8 p-5">
+        <img src={backgroundImage} className='bg-cover w-[100vw] absolute h-full opacity-45 -z-1'/>
+
+        <div className="container w-[145vh] h-[85vh] grid grid-cols-4 grid-rows-5 gap-8 p-5">
             <div className="flex flex-col items-center justify-center col-start-1 col-span-2 row-start-1 row-span-2">
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center text-[130px] mb-10">
                     <div className='font-bold'>{time.hour}</div>
                     <div className='font-bold'>{time.separator}</div>
                     <div className='font-bold'>{time.minutes}</div>
                     <div className='font-bold'>{time.separator2}</div>
                     <div className='font-bold'>{time.seconds}</div>
                 </div>
-                <div id="greetings" className="text-black"></div>
+                <div id="greetings" className="text-black text-3xl">{greeting}</div>
             </div>
 
             <div className="weatherBlock flex flex-col items-center justify-center col-start-3 col-span-2 row-start-1 row-span-2">
@@ -93,7 +97,7 @@ export default function Home() {
                 </div>
                 <div className="weather flex items-center justify-center">
                     <div className="weatherIcon">
-                        <img src="assets/icons/OneDark/unknown.png" />
+                        <img src="maestro194/Bento/assets/icons/OneDark/unknown.png" />
                     </div>
                     <div className="weatherValue">
                         <p>- °<span className="g">c</span></p>
@@ -106,7 +110,7 @@ export default function Home() {
 
             <div className="linksBlock grid row-start-3 row-span-2 col-start-1 col-span-4" id="linksBlock">
                 <div className="linksBlockLeft row-start-1 row-span-2 col-start-1 col-span-2" id="linksBlockLeft">
-
+                    
                 </div>
                 <div className="linksBlockRight row-start-1 row-span-2 col-start-3 col-span-2" id="linksBlockRight"></div>
             </div>
