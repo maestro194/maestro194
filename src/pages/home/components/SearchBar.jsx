@@ -20,6 +20,7 @@ export default function SearchBar() {
             <div className='flex items-center justify-center w-full h-full'>
                 <form onSubmit={handleSearch} className='flex items-center justify-center w-2/3'>
                     <input 
+                        autoFocus={true}
                         type='text' 
                         placeholder='Search' 
                         value={searchText} 
