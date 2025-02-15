@@ -24,6 +24,8 @@ export default function Balatro() {
             className='mt-2 text-black px-2 py-3 text-bold text-center w-[3/4] bg-white rounded-md shadow-md hover:bg-gray-200'>
             Save Editor
         </a>
+
+
         
     </div>
   )
