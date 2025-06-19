@@ -38,11 +38,89 @@ void FileInOut()
 // unusual mod : 1000003999
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
+ll m, n;
+ll a[100005], b[100005];
+ll ans;
 
+bool check(ll r){
+  ll top = 0;
+  for(ll i = 0; i < n; i++){
+    if(abs(a[i] - b[top]) > r){
+      while(top < m && abs(a[i] - b[top]) > r){
+        top++;
+      }
+      if(top == m){
+        return false;
+      }
+    }
+  }
+  return true;
+}
 
 void Solve()
 {
+  srand(time(0));
+
+  int test = 10;
+  for(int test = 4; test <= 4; test ++) {
+
+    string infile = to_string(test);
+    infile += ".in";
+    infile = "testcase/shield_distribution/" + infile;
+    string outfile = to_string(test);
+    outfile += ".out";
+    outfile = "testcase/shield_distribution/" + outfile;
+    cout << "Processing file: " << infile << endl;
+
+    ofstream fout(infile);
+    // int t = 10;
+    // fout << t << endl;
+    ofstream fout2(outfile);
+
+    // for(int te = 1; te <= t; te ++) {
+    n = 100000;
+    m = 100000;
+    fout << n << " " << m << endl;
+    for(int i = 0; i < n; i ++) {
+      ll x = rand() % 1000000 + 1;
+      ll y = rand() % 1000000 + 1;
+      a[i] = (x * y) % 1000000000;
+      if(rand() % 2 == 0)
+        a[i] = -a[i];
+    }
+    
+    for(int i = 0; i < m; i ++) {
+      ll x = rand() % 1000000 + 1;
+      ll y = rand() % 1000000 + 1;
+      b[i] = (x * y) % 1000000000;
+      if(rand() % 2 == 0)
+        b[i] = -b[i];
+    }
+    sort(a, a + n);
+    sort(b, b + m);
+    for(int i = 0; i < n; i ++)
+      fout << a[i] << " ";
+    fout << endl;
+    for(int i = 0; i < m; i ++)
+      fout << b[i] << " ";
+
+    ll l=0, r=max(abs(a[0]-b[m-1]), abs(a[n-1]-b[0]));
+    while(r>l){
+      ans=(r+l)/2;
+
+      if(check(ans)){
+        r=ans;
+      }
+      else{
+        l=ans+1;
+      }
+    }
+    fout2 << r;
+    
+    
+  }
   
+
 }
 
 int32_t main()
@@ -59,5 +137,5 @@ int32_t main()
   auto stop = high_resolution_clock::now();
   auto duration = duration_cast<microseconds>(stop - start);
   double t = duration.count() * 1.0 / 1000000;
-  cout << endl << "Runtime: " << t << endl;
+  // cout << endl << "Runtime: " << t << endl;
 }

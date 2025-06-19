@@ -1,13 +1,15 @@
 /*
-  Author: CNH_Tourist
+  Author: _Maestro
   Status: Not submitted
 */
 
 #include <bits/stdc++.h>
+#pragma GCC target("avx2")
+#pragma GCC optimization ("O3")
 #pragma GCC optimization ("unrolled-loops")
 using namespace std;
 
-#define filename ""
+#define filename "test"
 #define endl '\n'
 #define X first
 #define Y second
@@ -38,27 +40,43 @@ void FileInOut()
 // unusual mod : 1000003999
 // atan2(y, x): tinh goc tao boi oX va diem co toa do (x, y)
 
-int card;
+ll m, n;
+ll a[100005], b[100005];
+ll ans;
+
+bool check(ll r){
+	ll top=0;
+	for(ll i=0; i<n; i++){
+		if(abs(a[i]-b[top])>r){
+			while(top < m && abs(a[i]-b[top])>r){
+				top++;
+			}
+			if(top == m){
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
 
 void Solve()
 {
-  srand(time(NULL));
-
-  while(cin >> card) {
-    if (card == 0) {
-      return;
-    }
+  cin >> n >> m;
+  for(int i = 0; i < n; i ++)
+      cin >> a[i];
+  for(int i = 0; i < m; i ++)
+      cin >> b[i];
   
-    int card2 = rand() % 13 + 2;
-    if (card2 == card)
-      cout << "EQUAL" << endl;
-    else if (card2 > card)
-      cout << "OVER" << endl;
-    else
-      cout << "UNDER" << endl;
+  ll l=0, r=max(abs(a[0]-b[m-1]), abs(a[n-1]-b[0]));
+  while(r>l){
+    ans=(r+l)/2;
 
-    cout.flush();
+    if(check(ans))
+      r=ans;
+    else
+      l=ans+1;
   }
+  cout << r;
 }
 
 int32_t main()
